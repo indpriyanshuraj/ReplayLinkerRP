@@ -1,0 +1,45 @@
+# Auto-labeling rules for pull requests.
+# Maps file path patterns to labels.
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'docs/**'
+          - '.github/**/*.md'
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/ui/**'
+          - 'src/textures/**'
+
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'scripts/**'
+          - '.github/workflows/**'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+          - '.github/labeler.yml'
+          - '.github/dependabot.yml'
+
+manifest:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/manifest.json'
+
+assets:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/pack_icon.png'
+          - 'src/textures/**'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+          - '.github/dependabot.yml'

@@ -1,0 +1,17 @@
+{
+	"extension_packs_list": {
+		"$is_empty_pack": false,
+		"modifications": [{
+			"array_name": "controls",
+			"operation": "insert_front",
+			"value": {
+				"replay_compatibility@déesse_ui_extensionPacks.extension_pack_item": {
+					"$pack_name_underscore": "replay_linker",
+					"$pack_name": "Replay Linker",
+					"$pack_version": "1.0.0",
+					"$creator": "Priyanshu Raj"
+				}
+			}
+		}]
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": 3,
+	"header": {
+		"name": "§l§bReplay Linker",
+		"description": "§bReplay Linker§r adds a lightweight Replay shortcut to §lDéesse UI§r for compatible Replay mods that do not provide their own Déesse UI integration.\n§7This extension only adds the UI link — it does not include or provide Replay functionality.§r\n§a For more information visit §nhttps://github.com/indpriyanshuraj/ReplayLinkerRP",
+		"uuid": "aa578861-cfb3-4c89-a8f0-480adf2503e9",
+		"version": "1.0.0",
+		"min_engine_version": "1.21.100",
+		"pack_scope": "any"
+	},
+	"modules": [{
+		"type": "resources",
+		"uuid": "d5b99d8d-3ea8-417b-b06b-38c3fbf24de5",
+		"version": "1.0.0",
+		"description": "Resource pack module for Replay Linker."
+	}],
+
+	"metadata": {
+		"authors": [
+			"indpriyanshuraj"
+		],
+		"license": "Apache-2.0",
+		"url": "https://github.com/indpriyanshuraj/ReplayLinkerRP",
+		"product_type": "addon",
+		"generated_with": {
+			"GitHub Action": [
+				"1.0.0"
+			]
+		}
+	}
+}

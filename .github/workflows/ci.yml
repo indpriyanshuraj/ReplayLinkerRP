@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate JSON & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install --yes jq zip unzip
+
+      - name: Validate all JSON files
+        run: |
+          set -e
+          fail=0
+          while IFS= read -r -d '' f; do
+            if ! jq empty "$f" 2>/dev/null; then
+              echo "::error file=$f::Invalid JSON"
+              fail=1
+            fi
+          done < <(find src/ -type f -name '*.json' -print0)
+          if [ "$fail" -eq 1 ]; then
+            echo "One or more JSON files are invalid."
+            exit 1
+          fi
+          echo "All JSON files are valid."
+
+      - name: Check manifest version is valid SemVer
+        run: |
+          version="$(jq -er '.header.version | if type == "array" then join(".") else tostring end' src/manifest.json)"
+          if ! echo "$version" | grep -qE '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$'; then
+            echo "::error::manifest.json version '$version' is not valid SemVer"
+            exit 1
+          fi
+          echo "Manifest version: $version"
+
+      - name: Build (check mode)
+        run: ./scripts/build_release.sh --check "v$(jq -er '.header.version | if type == "array" then join(".") else tostring end' src/manifest.json)"
+
+  markdown-lint:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: |
+            *.md
+            docs/*.md
+            .github/**/*.md

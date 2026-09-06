@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Project documentation
+    about: Read the README and contribution guidelines before opening an issue.
+    url: https://github.com/indpriyanshuraj/ReplayLinkerRP#readme
+  - name: 🧵 GitHub Discussions
+    about: Ask questions, share ideas, and discuss ReplayLinkerRP.
+    url: https://github.com/indpriyanshuraj/ReplayLinkerRP/discussions
+  - name: 🛡️ Security reporting
+    about: Privately report security vulnerabilities.
+    url: https://github.com/indpriyanshuraj/ReplayLinkerRP/security/advisories/

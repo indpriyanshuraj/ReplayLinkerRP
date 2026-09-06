@@ -1,0 +1,30 @@
+{
+	"replay_button@déesse_buttons.light_content": {
+		"$button_content": "déesse_start.replay_icon_content",
+		"$pressed_button_name": "button.replay_open_library",
+		"$focus_id": "déesse_replay_button",
+		"button_mappings": [{
+			"from_button_id": "button.menu_select",
+			"to_button_id": "button.replay_open_library",
+			"mapping_type": "pressed"
+		},
+			{
+				"from_button_id": "button.menu_ok",
+				"to_button_id": "button.replay_open_library",
+				"mapping_type": "pressed"
+			}]
+	},
+	"replay_icon_content": {
+		"type": "image",
+		"texture": "textures/déesse_ui/extension_packs_icon/replay_linker",
+		"size": [
+			16,
+			16
+		],
+		"anchor_from": "center",
+		"anchor_to": "center"
+	},
+	"main_button_panel/realms": {
+		"$left_button_control": "déesse_start.replay_button"
+	}
+}

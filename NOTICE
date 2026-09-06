@@ -1,0 +1,15 @@
+ReplayLinkerRP
+Copyright 2026 indpriyanshuraj
+
+ReplayLinkerRP is an extension resource pack for the Déesse UI pack. It provides
+UI integration for compatible native replay implementations; it does not
+include those implementations.
+
+External projects referenced by this project retain their own copyrights,
+licenses, trademarks, and distribution terms:
+
+- Déesse — the base UI pack this extension targets.
+- BedrockReplay — by light; used with LeviLaunchroid.
+- Playback — by wo55555; a LeviLamina-based native client mod.
+
+See README.md and the documentation under docs/ for project details.
