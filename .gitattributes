@@ -1,0 +1,12 @@
+# Normalize text files to LF.
+* text=auto
+* text eol=lf
+
+# Binary project/distribution assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.mcpack binary

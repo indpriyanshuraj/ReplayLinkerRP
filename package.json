@@ -1,0 +1,16 @@
+{
+  "name": "replaylinkerrp",
+  "version": "1.0.0",
+  "description": "Lightweight Minecraft Bedrock resource-pack extension for the Déesse UI — adds a Replay button bridging to native replay mods.",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "node scripts/build.js --check"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/indpriyanshuraj/ReplayLinkerRP",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indpriyanshuraj/ReplayLinkerRP.git"
+  }
+}

@@ -1,0 +1,122 @@
+name: 🐛 Bug Report
+description: Report a reproducible ReplayLinkerRP problem
+title: "[Bug] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please follow the [Code of Conduct](../../CODE_OF_CONDUCT.md). For security vulnerabilities, do not use this form; use [GitHub Private Vulnerability Reporting](https://github.com/indpriyanshuraj/ReplayLinkerRP/security/advisories/) instead.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: Please search existing issues first and follow the project's Code of Conduct.
+      options:
+        - label: I have searched the existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have read and agree to follow the Code of Conduct
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Provide a clear description of the problem.
+      placeholder: The replay button does not appear...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest set of steps needed to reproduce the problem.
+      placeholder: |
+        1. Install Déesse and ReplayLinkerRP
+        2. Install the supported native replay mod
+        3. Open a world
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Describe what actually happens.
+    validations:
+      required: true
+
+  - type: input
+    id: minecraft-version
+    attributes:
+      label: Minecraft Bedrock version
+      placeholder: 1.21.x
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: Android, Windows, iOS, Xbox, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: deesse-version
+    attributes:
+      label: Déesse version
+      placeholder: 1.x.x
+    validations:
+      required: true
+
+  - type: input
+    id: replaylinker-version
+    attributes:
+      label: ReplayLinkerRP version
+      placeholder: 1.0.0
+
+  - type: input
+    id: replay-mod
+    attributes:
+      label: Native replay mod and version
+      placeholder: BedrockReplay x.y.z or Playback x.y.z
+    validations:
+      required: true
+
+  - type: input
+    id: launcher-loader
+    attributes:
+      label: Launcher / loader
+      description: Include the launcher and loader version where applicable.
+      placeholder: LeviLaunchroid x.y.z / LeviLamina x.y.z
+
+  - type: textarea
+    id: other-packs
+    attributes:
+      label: Other resource packs or UI modifications
+      description: List other active packs or UI modifications that could affect Déesse.
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Include relevant logs, screenshots, or error messages when available. Remove private information.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other relevant information.

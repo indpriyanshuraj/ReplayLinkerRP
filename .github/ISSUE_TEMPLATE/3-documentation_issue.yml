@@ -1,0 +1,49 @@
+name: 📖 Documentation Issue
+description: Report a problem in ReplayLinkerRP documentation or project text
+title: "[Docs] "
+labels: ["documentation"]
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please follow the [Code of Conduct](../../CODE_OF_CONDUCT.md). For security vulnerabilities, do not use this form; use [GitHub Private Vulnerability Reporting](https://github.com/indpriyanshuraj/ReplayLinkerRP/security/advisories/) instead.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: Please search existing issues first and follow the project's Code of Conduct.
+      options:
+        - label: I have searched the existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have read and agree to follow the Code of Conduct
+          required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Specify the file, section, page, or link where the issue appears.
+      placeholder: README.md — Installation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the typo, broken link, outdated version, incorrect instruction, or missing information.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Suggested correction
+      description: Provide the corrected text or explain what should be changed.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context

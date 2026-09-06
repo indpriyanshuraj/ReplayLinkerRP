@@ -1,0 +1,102 @@
+name: 🧪 Compatibility Report
+description: Report a tested compatibility combination (pass, fail, or partial)
+title: "[Compat] "
+labels: ["compatibility"]
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Use this template to report a tested compatibility combination.
+        This helps the project maintain an accurate compatibility record.
+        For security vulnerabilities, do not use this form; use
+        [GitHub Private Vulnerability Reporting](https://github.com/indpriyanshuraj/ReplayLinkerRP/security/advisories/) instead.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: Please search existing issues first and follow the project's Code of Conduct.
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have read and agree to follow the Code of Conduct
+          required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: Test result
+      description: Overall result of this compatibility combination.
+      options:
+        - Pass — works as expected
+        - Partial — works with minor issues
+        - Fail — does not work
+    validations:
+      required: true
+
+  - type: input
+    id: replaylinker-version
+    attributes:
+      label: ReplayLinkerRP version
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: minecraft-version
+    attributes:
+      label: Minecraft Bedrock version
+      placeholder: 1.21.x
+    validations:
+      required: true
+
+  - type: input
+    id: deesse-version
+    attributes:
+      label: Déesse version
+      placeholder: 1.3.9
+    validations:
+      required: true
+
+  - type: input
+    id: replay-mod
+    attributes:
+      label: Native replay mod and version
+      placeholder: BedrockReplay x.y.z or Playback x.y.z
+    validations:
+      required: true
+
+  - type: input
+    id: launcher-loader
+    attributes:
+      label: Launcher / loader version
+      placeholder: LeviLaunchroid x.y.z / LeviLamina x.y.z
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - Windows
+        - iOS / iPadOS
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Describe what worked, what did not, and any workarounds. Include screenshots if helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Any other relevant details.

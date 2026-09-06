@@ -1,0 +1,63 @@
+name: ✨ Feature Request
+description: Suggest an improvement for ReplayLinkerRP
+title: "[Feature] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please follow the [Code of Conduct](../../CODE_OF_CONDUCT.md). For security vulnerabilities, do not use this form; use [GitHub Private Vulnerability Reporting](https://github.com/indpriyanshuraj/ReplayLinkerRP/security/advisories/) instead.
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      description: Please search existing issues first and follow the project's Code of Conduct.
+      options:
+        - label: I have searched the existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have read and agree to follow the Code of Conduct
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Describe the limitation or use case this request addresses.
+      placeholder: The current integration...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior or feature you would like to see.
+      placeholder: Add support for...
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Proposed implementation
+      description: Optional technical details about how you think it could be implemented.
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility considerations
+      description: Explain any expected impact on Déesse, BedrockReplay, Playback, LeviLaunchroid, or LeviLamina.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Describe other solutions or workarounds you considered.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add links or other relevant details.

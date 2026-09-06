@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate JSON & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Validate all JSON files
+        run: |
+          set -e
+          fail=0
+          while IFS= read -r -d '' f; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "::error file=$f::Invalid JSON"
+              fail=1
+            fi
+          done < <(find src/ -type f -name '*.json' -print0)
+          if [ "$fail" -eq 1 ]; then
+            echo "One or more JSON files are invalid."
+            exit 1
+          fi
+          echo "All JSON files are valid."
+
+      - name: Build (check mode)
+        run: |
+          version="$(node -e "const m=JSON.parse(require('fs').readFileSync('src/manifest.json','utf8'));process.stdout.write(Array.isArray(m.header.version)?m.header.version.join('.'):String(m.header.version))")"
+          node scripts/build.js --check "v$version"
